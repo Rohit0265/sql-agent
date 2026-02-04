@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🤖 SQL Agent AI SDK
 
-## Getting Started
+An **AI-powered SQL assistant** that allows **non-technical users** to query databases using **natural language prompts**.
 
-First, run the development server:
+Users can simply type questions like:  
+> *"Show me total sales for last month"*  
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+And the system automatically:
+- Converts it into SQL  
+- Runs it on the database  
+- Returns the result in a readable format  
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+No SQL knowledge required.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+🔗 **Live Demo:** https://sql-agent-plum.vercel.app/
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🚀 Key Features
 
-To learn more about Next.js, take a look at the following resources:
+- Natural language → SQL conversion  
+- Designed for non-technical users  
+- Real-time database querying  
+- Prompt-based interface  
+- AI-powered query understanding  
+- Results displayed as structured data  
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧠 How It Works
 
-## Deploy on Vercel
+1. User enters a prompt in plain English  
+2. AI model converts the prompt into a SQL query  
+3. Query is validated and executed  
+4. Results are returned to the UI  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠 Tech Stack
+
+### Frontend
+- React / Next.js  
+- TypeScript  
+- Tailwind CSS
+
+### Backend / SDK
+- Node.js  
+- API routes  
+- LLM (OpenAI / similar)  
+- SQL query generator & validator  
+
+### Database
+- SQLite  
+
+---
+
+## 🎯 Target Users
+
+- Non-technical business users  
+- Analysts & managers  
+- Startup founders  
+- Product teams  
+- Anyone who wants data without writing SQL  
+
+---
+
+## 🔐 Security & Safety
+
+- Read-only query mode  
+- SQL injection prevention  
+- Query validation layer  
+- Controlled schema access  
+
+---
+
+## 📚 Learning Outcomes
+
+- Prompt engineering  
+- LLM integration  
+- SQL generation from natural language  
+- AI agent system design  
+- Bridging AI with real databases  
+
+---
+
+## ⚠️ Disclaimer
+
+This is an experimental AI-based tool built for learning and demonstration.  
+Generated SQL queries should always be reviewed before production use.
