@@ -1,10 +1,13 @@
-import { streamText, UIMessage, convertToModelMessages, tool } from 'ai';
+import { db } from '@/src/db/db';
+import { streamText, UIMessage, convertToModelMessages, tool, stepCountIs } from 'ai';
 import { z } from 'zod/v4';
 
 export async function POST(req: Request) {
   const { messages }: { messages: UIMessage[] } = await req.json();
-
+  // stopWhen  = stepCountIs(5);
   const SYSTEM_PROMPT = `You are an expert SQL assistant that helps users to query their database using natural language.
+
+  ${new Date().toLocaleString('sv-SE')}
 
 You have access to following tools:
 1. schema tool - call this tool to get the database schema which will help you to write sql query.
@@ -22,6 +25,7 @@ Always respond in a helpful, conversational tone while being technically accurat
     model: "openai/gpt-5.2-codex",
     messages: await convertToModelMessages(messages),
     system:SYSTEM_PROMPT,
+    stopWhen: stepCountIs(5),
         tools: {
       db: tool({
         description: 'Call this tool to query a database',
@@ -29,8 +33,8 @@ Always respond in a helpful, conversational tone while being technically accurat
           query: z.string().describe('The SQL query to be ran'),
         }),
         execute: async ({query})=>{
-            console.log('Query',query);
-            return '';
+            // console.log('Query',query);
+            return await db.run(query);
         }
       }),
       schema: tool({
